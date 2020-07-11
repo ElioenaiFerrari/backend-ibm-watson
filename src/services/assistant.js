@@ -3,7 +3,7 @@ import {
   IamAuthenticator
 } from 'ibm-watson/auth'
 
-class Assistant {
+class IBMWatson {
   constructor(assistantId, apiKey, url) {
     this.assistantId = assistantId;
     this.apiKey = apiKey;
@@ -60,4 +60,4 @@ class Assistant {
 
 }
 
-export default Assistant;
+export default IBMWatson;

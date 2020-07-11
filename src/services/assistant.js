@@ -3,7 +3,7 @@ import {
   IamAuthenticator
 } from 'ibm-watson/auth'
 
-class IBMWatson {
+class Assistant {
   constructor(assistantId, apiKey, url) {
     this.assistantId = assistantId;
     this.apiKey = apiKey;
@@ -23,6 +23,13 @@ class IBMWatson {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  async deleteSession() {
+    await this.watson.deleteSession({
+      assistantId: this.assistantId,
+      sessionId: this.sessionId,
+    });
   }
 
   init() {
@@ -60,4 +67,4 @@ class IBMWatson {
 
 }
 
-export default IBMWatson;
+export default Assistant;

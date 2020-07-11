@@ -29,8 +29,6 @@ const WatsonController = {
       context,
     };
 
-
-
     try {
       const response = await assistant.message(params);
 

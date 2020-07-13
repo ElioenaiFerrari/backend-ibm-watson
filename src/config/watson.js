@@ -1,8 +1,5 @@
 import 'dotenv/config';
 
-
-
-
 const watsonConfig = {
   ASSISTANT_APIKEY: process.env.ASSISTANT_APIKEY,
   ASSISTANT_IAM_APIKEY: process.env.ASSISTANT_IAM_APIKEY,
@@ -14,6 +11,6 @@ const watsonConfig = {
   ASSISTANT_IAM_URL: process.env.ASSISTANT_IAM_URL,
   USERNAME: process.env.USERNAME,
   PASSWORD: process.env.PASSWORD,
-}
+};
 
-export default watsonConfig
+export default watsonConfig;

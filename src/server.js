@@ -1,9 +1,7 @@
 import app from './config/app';
-import serverConfig from './config/server'
+import serverConfig from './config/server';
 
-const {
-  PORT
-} = serverConfig;
+const { PORT } = serverConfig;
 
 function listenMessage() {
   return console.log(`Listen on http://localhost:${PORT}`);

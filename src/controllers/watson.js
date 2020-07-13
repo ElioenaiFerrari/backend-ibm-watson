@@ -7,12 +7,13 @@ const assistant = new Assistant(WORKSPACE_ID, ASSISTANT_APIKEY, ASSISTANT_URL);
 
 const WatsonController = {
   async chat(req, res) {
-    const { text } = req.body;
+    const { text, context = {} } = req.body;
 
     const params = {
       input: {
         text,
       },
+      context,
       sessionId: assistant.sessionId,
       assistantId: assistant.assistantId,
     };

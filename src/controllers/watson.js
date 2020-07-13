@@ -15,7 +15,6 @@ const WatsonController = {
       },
       sessionId: assistant.sessionId,
       assistantId: assistant.assistantId,
-      context,
     };
 
     try {

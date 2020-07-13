@@ -1,7 +1,5 @@
 import AssistantV2 from 'ibm-watson/assistant/v2';
-import {
-  IamAuthenticator
-} from 'ibm-watson/auth'
+import { IamAuthenticator } from 'ibm-watson/auth';
 
 class Assistant {
   constructor(assistantId, apiKey, url) {
@@ -10,7 +8,6 @@ class Assistant {
     this.url = url;
     this.sessionId = null;
     this.init();
-
   }
 
   async createSession() {
@@ -61,10 +58,8 @@ class Assistant {
       return response.result.output.generic;
     } catch (error) {
       console.log(error);
-
     }
   }
-
 }
 
 export default Assistant;

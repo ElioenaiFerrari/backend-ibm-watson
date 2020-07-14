@@ -54,13 +54,10 @@ class Assistant {
 
   async setMeeting(confirm, date, time) {
     if (confirm === 'Sim') {
-      console.log('===================Entrou');
       await Meeting.create({
         date,
         time,
       });
-    } else {
-      return null;
     }
   }
 

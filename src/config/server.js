@@ -1,8 +1,8 @@
-import 'dotenv/config';
+require('dotenv/config');
 
 const serverConfig = {
   HOST: process.env.HOST,
   PORT: process.env.PORT,
 };
 
-export default serverConfig;
+module.exports = serverConfig;

@@ -1,10 +1,8 @@
-import {
-  Router
-} from 'express'
-import WatsonController from '../controllers/watson';
+const { Router } = require('express');
+const { WatsonController } = require('../controllers');
 
 const router = Router();
 
 router.post('/chat', WatsonController.chat);
 
-export default router;
+module.exports = router;

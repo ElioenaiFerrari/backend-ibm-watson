@@ -1,4 +1,4 @@
-import 'dotenv/config';
+require('dotenv/config');
 
 const watsonConfig = {
   ASSISTANT_APIKEY: process.env.ASSISTANT_APIKEY,
@@ -13,4 +13,4 @@ const watsonConfig = {
   PASSWORD: process.env.PASSWORD,
 };
 
-export default watsonConfig;
+module.exports = watsonConfig;

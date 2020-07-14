@@ -1,5 +1,5 @@
-import AssistantV2 from 'ibm-watson/assistant/v2';
-import { IamAuthenticator } from 'ibm-watson/auth';
+const AssistantV2 = require('ibm-watson/assistant/v2');
+const { IamAuthenticator } = require('ibm-watson/auth');
 
 class Assistant {
   constructor(assistantId, apiKey, url) {
@@ -62,4 +62,4 @@ class Assistant {
   }
 }
 
-export default Assistant;
+module.exports = Assistant;

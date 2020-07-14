@@ -1,5 +1,5 @@
-import Assistant from '../services/assistant';
-import watsonConfig from '../config/watson';
+const Assistant = require('../services/assistant');
+const watsonConfig = require('../config/watson');
 
 const { WORKSPACE_ID, ASSISTANT_APIKEY, ASSISTANT_URL } = watsonConfig;
 
@@ -29,4 +29,4 @@ const WatsonController = {
   },
 };
 
-export default WatsonController;
+module.exports = WatsonController;

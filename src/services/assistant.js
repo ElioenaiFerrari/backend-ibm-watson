@@ -1,5 +1,6 @@
 const AssistantV2 = require('ibm-watson/assistant/v2');
 const { IamAuthenticator } = require('ibm-watson/auth');
+const { Meeting } = require('../models');
 
 class Assistant {
   constructor(assistantId, apiKey, url) {
@@ -51,9 +52,43 @@ class Assistant {
     return response;
   }
 
+  async setMeeting(confirm, date, time) {
+    if (confirm === 'Sim') {
+      console.log('===================Entrou');
+      await Meeting.create({
+        date,
+        time,
+      });
+    } else {
+      return null;
+    }
+  }
+
+  verifyEntity(entity, value) {
+    switch (entity) {
+      case 'sys-date':
+        this.date = value;
+        break;
+      case 'sys-time':
+        this.time = value;
+        break;
+      case 'confirm':
+        this.setMeeting(value, this.date, this.time);
+        break;
+      default:
+        return;
+    }
+  }
+
   async message(params) {
     try {
       const response = await this.watson.message(params, this.resolveResponse);
+
+      const sys = response.result.output.entities[0] || {};
+
+      if (sys.entity && sys.value) {
+        this.verifyEntity(sys.entity, sys.value);
+      }
 
       return response.result.output.generic;
     } catch (error) {

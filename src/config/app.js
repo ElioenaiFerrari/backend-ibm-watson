@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const { watsonRoutes, meetingRoutes } = require('../routes');
+const { watsonRoutes } = require('../routes');
 const cors = require('cors');
 require('../database');
 
@@ -11,6 +11,5 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(watsonRoutes);
-app.use(meetingRoutes);
 
 module.exports = app;
